@@ -1,22 +1,13 @@
 // JavaScript Document
 
-var button = document.getElementById('button');
-
-startJam = function()
-{
-	console.log('startJam started');
+function check() {
+	var button = document.getElementById('button');
+	var one = document.getElementById('one').value;
+	var two = document.getElementById('two').value;
 	
-	var timeSignatures = document.getElementById('timeSignatures');
-	var bpm = document.getElementById('bpm');
-	console.log('1');
-	console.log(timeSignatures);
-	console.log(bpm);
-	console.log('2');
-	
-	if((timeSignatures == '2/2') && (bpm == '100')) 
-	{
-		console.log('I am working!');	
+	if ((one == 1) && (two == 2)){
+		button.onClick = alert("correct");	
+		} else {
+		button.onClick = alert("incorrect");
 	}
 }
-		
-button.onClick = startJam();
