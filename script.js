@@ -1,13 +1,28 @@
 // JavaScript Document
 
-function check() {
-	var button = document.getElementById('button');
-	var one = document.getElementById('one').value;
-	var two = document.getElementById('two').value;
+var frequencyString = 0;
+var frequencyParsed = 0;
+
+function runLoop()
+{
+	if(frequencyParsed > 0) clearInterval(frequencyParsed);	
+	console.log(frequencyParsed);
 	
-	if ((one == 1) && (two == 2)){
-		button.onClick = alert("correct");	
-		} else {
-		button.onClick = alert("incorrect");
-	}
+	var frequencyString = document.getElementById('frequencyString').value;
+	console.log('frequencyString is ' + frequencyString);
+	
+	var frequencyParsed = parseInt(frequencyString);
+	console.log(frequencyParsed);
+	
+	metronome = setInterval('startLoop()', frequencyParsed);	
+	
+	console.log(frequencyParsed);
+}
+
+function startLoop() {
+	console.log('Loop has initiated');
+}
+
+function stopLoop() {
+	clearInterval(metronome);	
 }
