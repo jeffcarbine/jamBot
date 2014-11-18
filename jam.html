@@ -10,13 +10,35 @@
 
 <body>
 
-<input id="bpm" value="60">
-<input id="bpb" value="4">
+<h1>JamBot</h1>
 
-<button onclick="initLoop();">Start</button>
-<button onclick="stopLoop();">Stop</button>
+<div id="switch1" class="switch">Metronome</div>
+<div id="switch2" class="switch">Tuner</div>
 
-<script src="script.js"></script>
+<div id="panel1" class="panel">
+	<h2>Metronome</h2>
+    <div id="row">
+    <input type="number" id="bpm" value="60">
+    <input type="number" id="bpb" value="4">
+    <input type="number" id="emphasis" value="1">
+    </div>
+    
+    <div class="onoffswitch">
+        <input type="checkbox" onclick="startJam();" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+    
+    <div id="theCount"></div>
+    
+    <script src="script.js"></script>
+</div>
+
+<div id="panel2" class="panel">
+	<h2>Tuner</h2>
+</div>
 
 </body>
 </html>
