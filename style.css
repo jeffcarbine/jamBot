@@ -80,7 +80,7 @@ div#theCount {
 	min-height: 40px;
 }
 
-.switch {
+.trigger {
 	float: left;
 	margin: 0 10px 10px 0;
 	font-size: 20px;
@@ -93,3 +93,7 @@ div#theCount {
 	position: absolute;
 	top: 125px;
 }
+
+#metronomeSounds {
+	display: none;
+}	

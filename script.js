@@ -1,6 +1,5 @@
 // Creating the global variables needed
 // for the metronome
-var bpmString = 0;
 var bpm = 60;
 var bpb = 4;
 var emphasis = 1;
@@ -53,16 +52,16 @@ function validate() {
 function checkBeat() {
 	var emphasis = document.getElementById('emphasis').value;
 	if (i == (emphasis - 1)) {
-		console.log('Marked beat');
+		document.getElementById('cajonAccent-1').play();
 	} else {
-		console.log('Non-marked beat');	
+		document.getElementById('cajonNon-1').play();
 	}
 }	
 
 // This loops through the metronome, restarting
 // after the beats reach the end of the measure
 function startLoop() {
-	// i is the number of beats per measure
+	// i is the number of beats per bar
 	// remember!! it starts with zero, so it is always
 	// one less than the beats per measure
 	if(i <= (bpb - 1)) {
@@ -128,7 +127,7 @@ var panelDisplay = function()
 		// Define the base id of the switch here
 		// that is followed by the numer
 		//		for example, "swtich1" "switch2" etc...
-		var switchClass = 'switch';
+		var switchClass = 'trigger';
 		// Break apart the switch id to
 		// isolate the number
 		var switchOptions = document.querySelectorAll('[id*="' + switchClass + '"]'); 

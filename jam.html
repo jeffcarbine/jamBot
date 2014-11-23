@@ -12,8 +12,8 @@
 
 <h1>JamBot</h1>
 
-<div id="switch1" class="switch">Metronome</div>
-<div id="switch2" class="switch">Tuner</div>
+<div id="trigger1" class="trigger">Metronome</div>
+<div id="trigger2" class="trigger">Tuner</div>
 
 <div id="panel1" class="panel">
 	<h2>Metronome</h2>
@@ -21,6 +21,17 @@
     <input type="number" id="bpm" value="60">
     <input type="number" id="bpb" value="4">
     <input type="number" id="emphasis" value="1">
+    </div>
+    
+    <div id="metronomeSounds">
+    	<audio id="cajonAccent-1">
+        	<source src="audio/metronome/cajonAccent-1.wav" type="audio/wav">
+            <source src="audio/metronome/cajonAccent-1.ogg" type="audio/ogg">
+            Your browser does not support audio.
+        </audio>
+        <audio id="cajonNon-1">
+        	<source src="audio/metronome/cajonNon-1.wav" type="audio/wav">
+            <source src="audio/metronome/cajonNon-1.ogg" type="audio/ogg">
     </div>
     
     <div class="onoffswitch">
