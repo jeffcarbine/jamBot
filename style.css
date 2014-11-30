@@ -1,9 +1,27 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@font-face {
+    font-family: 'silkscreen';
+    src: url('fonts/silkscreen/slkscr-webfont.eot');
+    src: url('fonts/silkscreen/slkscr-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/silkscreen/slkscr-webfont.woff') format('woff'),
+         url('fonts/silkscreen/slkscr-webfont.ttf') format('truetype'),
+         url('fonts/silkscreen/slkscr-webfont.svg#silkscreennormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
 	background: #ddd;
 	color: #eee;
+	font-family: silkscreen;
+}
+
+#container {
+	width: 300px;
+	margin: 0 auto;	
 }
 
 button {
@@ -16,15 +34,28 @@ button {
 }
 
 input {
-	width: 55px;
+	width: 73px;
 	padding: 7px;
 	font-size: 20px;
 	color: #555;
+	font-family: silkscreen;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.title {
+	
+}.title {
+	float: left;
+	height: 40px;
+	width: 73px;
+	padding: 11px;
 }
 
 .onoffswitch {
     position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+	margin: 15px auto;
 }
 .onoffswitch-checkbox {
     display: none;
@@ -40,7 +71,7 @@ input {
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    font-size: 14px; color: white;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 .onoffswitch-inner:before {
@@ -71,42 +102,60 @@ input {
 }
 
 div#theCount {
-	font-size: 30px;
+	font-size: 188px;
 	color: #fff;
 	background: #333;
-	width: 50px;
-	padding: 5px 0px;
+	width: 257px;
+	padding: 28px 0px;
 	text-align: center;
-	min-height: 40px;
+	height: 173px;
+	margin: 10px auto;
+	border-radius: 5px;
+	opacity: .95;
 }
 
 .trigger {
 	float: left;
-	margin: 0 10px 10px 0;
+	margin-right: 10px;
 	font-size: 20px;
-	background: #333;
 	padding: 7px;
 	border-radius: 5px 5px 0 0;
 	cursor: pointer;
+}
+
+#trigger1 {
+	background: #440101;	
+}
+
+#trigger2 {
+	background: #012a44;	
 }
 
 #metronomeSounds {
 	display: none;
 }	
 
+.panel {
+	padding: 5px;	
+}
+
 #panel1 {
 	display: block;	
+	background: #440101;
 }
 
 #panel2 {
 	display: none;	
+	background: #012a44;
 }
 
 #logo {
-	max-width: 250px;	
+	width: 100%;	
 	margin-bottom: 20px;
 }
 
 h2 {
-	color: #333;
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
 }
