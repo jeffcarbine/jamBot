@@ -33,6 +33,7 @@ function initLoop()
 	
 		// Start the metronome - uses 
 		// function startLoop() below	
+		console.log(bpb);
 		metronome = setInterval('startLoop()', (60000/bpm));
 	}
 	
@@ -64,6 +65,18 @@ function startLoop() {
 	// i is the number of beats per bar
 	// remember!! it starts with zero, so it is always
 	// one less than the beats per measure
+	
+	// Get the metronome number from the drop-down
+	// menu selection
+	var bpmString = document.getElementById('bpm').value;
+	var bpbString = document.getElementById('bpb').value;
+	
+	// Change the metronome string to number
+	var bpm = parseInt(bpmString);
+	var bpb = parseInt(bpbString);
+	
+	console.log(bpb);
+
 	if(i <= (bpb - 1)) {
 		document.getElementById('theCount').innerHTML = (i+1);
 		checkBeat();
@@ -79,16 +92,17 @@ function startLoop() {
 
 // This starts the metronome loop
 function stopLoop() {
-	clearInterval(metronome);	
+	clearInterval(metronome);
+	i = 0;	
 	document.getElementById('theCount').innerHTML = '';
 }
 
 // Swtich for turning the metronome on or off
 function startJam() {
-	if (document.getElementById('myonoffswitch').checked) {
+	if (document.getElementById('myonoffswitch').checked == true) {
 		initLoop();	
 	} else {
-		stopLoop();	
+		stopLoop();
 	}
 }
 
@@ -104,10 +118,6 @@ var panelDisplay = function()
 		// run the addClicks function
 		self.addClicks(); 
 		
-		// run the displayPanel function at
-		// start up to make sure all the panels
-		// are set to display:none
-		self.displayPanel(); 
 	}; 
 	
 	// add event listeners

@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	background: #222;
+	background: #ddd;
 	color: #eee;
 }
 
@@ -73,7 +73,7 @@ input {
 div#theCount {
 	font-size: 30px;
 	color: #fff;
-	background: #555;
+	background: #333;
 	width: 50px;
 	padding: 5px 0px;
 	text-align: center;
@@ -84,16 +84,29 @@ div#theCount {
 	float: left;
 	margin: 0 10px 10px 0;
 	font-size: 20px;
-	background: #666;
+	background: #333;
 	padding: 7px;
 	border-radius: 5px 5px 0 0;
-}
-
-.panel {
-	position: absolute;
-	top: 125px;
+	cursor: pointer;
 }
 
 #metronomeSounds {
 	display: none;
 }	
+
+#panel1 {
+	display: block;	
+}
+
+#panel2 {
+	display: none;	
+}
+
+#logo {
+	max-width: 250px;	
+	margin-bottom: 20px;
+}
+
+h2 {
+	color: #333;
+}
