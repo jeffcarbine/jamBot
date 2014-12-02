@@ -40,6 +40,18 @@ function initLoop()
 }
 
 function validate() {
+	
+	// Get the metronome number from the drop-down
+	// menu selection
+	var bpmString = document.getElementById('bpm').value;
+	var bpbString = document.getElementById('bpb').value;
+	
+	// Change the metronome string to number
+	var bpm = parseInt(bpmString);
+	var bpb = parseInt(bpbString);
+	
+	var emphasis = document.getElementById('emphasis').value;
+	
 	if(emphasis > bpb) {
 		alert('Emphasized beat must be within beats per measure');
 		var validate = false;
@@ -52,6 +64,7 @@ function validate() {
 // to do on each marked or non-marked beat
 function checkBeat() {
 	var emphasis = document.getElementById('emphasis').value;
+	
 	if (i == (emphasis - 1)) {
 		document.getElementById('cajonAccent-1').play();
 	} else {
@@ -106,7 +119,7 @@ function startJam() {
 	}
 }
 
-// PANEL/SWITCH CODE
+// PANEL/TRIGGER CODE
 
 var panelDisplay = function() 
 { 
@@ -136,7 +149,7 @@ var panelDisplay = function()
 	{ 
 		// Define the base id of the switch here
 		// that is followed by the numer
-		//		for example, "swtich1" "switch2" etc...
+		//	for example, "swtich1" "switch2" etc...
 		var switchClass = 'trigger';
 		// Break apart the switch id to
 		// isolate the number

@@ -33,7 +33,7 @@ button {
 	margin: 5px 0;	
 }
 
-input {
+.metronomeInput {
 	width: 73px;
 	padding: 7px;
 	font-size: 20px;
@@ -43,13 +43,22 @@ input {
 	border-radius: 5px;
 }
 
+.metronomeSounds {
+	margin: 0 13.3%;
+}
+
 .title {
-	
-}.title {
 	float: left;
 	height: 40px;
 	width: 73px;
 	padding: 11px;
+}
+
+.metronomeTitle {
+	float: left;
+	width: 73px;
+	padding: 11px;
+	text-align: center;
 }
 
 .onoffswitch {

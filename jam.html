@@ -23,15 +23,29 @@
 
 <div id="panel1" class="panel">
 	<h2>Metronome</h2>
+   
+    <div id="row">
+    	<div class="metronomeTitle" id="cajon">Cajon</div>
+        <div class="metronomeTitle" id="drums">Drums</div>
+        <div class="metronomeTitle" id="beep">Beep</div>
+    </div>
+    
+    <div id="row">
+    	<input class="metronomeSounds" type="radio" name="instrument" id="cajon" checked>
+        <input class="metronomeSounds" type="radio" name="instrument" id="drums">
+        <input class="metronomeSounds" type="radio" name="instrument" id="beep">
+    </div>
+    
     <div id="row">
     <div class="title">Beats Per<br>Minute</div>
     <div class="title">Beats Per<br>Measure</div>
     <div class="title">Accent on<br>the</div>
     </div>
+    
     <div id="row">
-    <input type="number" id="bpm" value="60">
-    <input type="number" id="bpb" value="4">
-    <input type="number" id="emphasis" value="1">
+    <input class="metronomeInput" type="number" id="bpm" value="60">
+    <input class="metronomeInput" type="number" id="bpb" value="4">
+    <input class="metronomeInput" type="number" id="emphasis" value="1">
     </div>
     
     <div id="metronomeSounds">
