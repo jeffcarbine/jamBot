@@ -43,7 +43,7 @@ button {
 	border-radius: 5px;
 }
 
-.metronomeSounds {
+.radioButtons {
 	margin: 0 13.3%;
 }
 
@@ -142,7 +142,7 @@ div#theCount {
 
 #metronomeSounds {
 	display: none;
-}	
+}
 
 .panel {
 	padding: 5px;	
@@ -167,4 +167,17 @@ h2 {
 	color: #fff;
 	font-size: 30px;
 	text-align: center;
+}
+
+.headstock {
+	width: 100%;	
+	display: none;
+}
+
+#instrument1 {
+	display: block;	
+}
+
+#headstockArea {
+	margin-top: 50px;
 }

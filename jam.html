@@ -31,9 +31,9 @@
     </div>
     
     <div id="row">
-    	<input class="metronomeSounds" type="radio" name="instrument" id="cajon" checked>
-        <input class="metronomeSounds" type="radio" name="instrument" id="drums">
-        <input class="metronomeSounds" type="radio" name="instrument" id="beep">
+    	<input class="radioButtons" type="radio" name="metronomeSound" value="cajon" id="cajon" checked="checked">
+        <input class="radioButtons" type="radio" name="metronomeSound" value="drums" id="drums">
+        <input class="radioButtons" type="radio" name="metronomeSound" value="beep" id="beep">
     </div>
     
     <div id="row">
@@ -43,7 +43,7 @@
     </div>
     
     <div id="row">
-    <input class="metronomeInput" type="number" id="bpm" value="60">
+    <input class="metronomeInput" type="number" id="bpm" value="120">
     <input class="metronomeInput" type="number" id="bpb" value="4">
     <input class="metronomeInput" type="number" id="emphasis" value="1">
     </div>
@@ -75,6 +75,16 @@
 
 <div id="panel2" class="panel">
 	<h2>Tuner</h2>
+	<div id="row">
+    	<input id="radio1" id="instrumentHeadstock" class="radioButtons" type="radio" name="instrumentTuned" value="guitar" checked="checked">
+        <input id="radio2" id="instrumentHeadstock" class="radioButtons" type="radio" name="instrumentTuned" value="bass">
+        <input id="radio3" id="instrumentHeadstock" class="radioButtons" type="radio" name="instrumentTuned" value="uke">
+    </div>
+    <div id="headstockArea">
+    	<img id="instrument1" src="graphics/headstockGuitar.png" class="headstock">
+        <img id="instrument2" src="graphics/headstockBass.png" class="headstock">
+        <img id="instrument3" src="graphics/headstockUke.png" class="headstock">
+    </div>
 </div>
 
 </div>

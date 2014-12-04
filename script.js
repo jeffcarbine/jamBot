@@ -1,6 +1,6 @@
 // Creating the global variables needed
 // for the metronome
-var bpm = 60;
+var bpm = 120;
 var bpb = 4;
 var emphasis = 1;
 i = 0;
@@ -119,21 +119,30 @@ function startJam() {
 	}
 }
 
-// PANEL/TRIGGER CODE
+function tuneHeadstock() {
+	if (document.getElementById('instrumentHeadstock').checked == 'guitar') {
+		document.getElemenetById('guitarHeadstock').style.display == 'block';	
+	}
+}
 
-var panelDisplay = function() 
+
+// PANEL/SWITCH CODE
+
+var panelDisplay = function(optionClassName, panelClassName) 
 { 
-	// Using the 'this' keyword
+	this.optionClass = optionClassName; 
+	this.panelClass = panelClassName; 
+	
 	var self = this; 
 	
 	this.setup = function() 
 	{ 
-		// run the addClicks function
 		self.addClicks(); 
 		
+		/* we want to remove all panels before */ 
+		//self.displayPanel(); 
 	}; 
 	
-	// add event listeners
 	this.addEvents = function() 
 	{ 
 		try{ 
@@ -147,33 +156,28 @@ var panelDisplay = function()
 	
 	this.addClicks = function() 
 	{ 
-		// Define the base id of the switch here
-		// that is followed by the numer
-		//	for example, "swtich1" "switch2" etc...
-		var switchClass = 'trigger';
-		// Break apart the switch id to
-		// isolate the number
+		/* This var tells the script what you have
+		the switch id set as */
+		var switchClass = self.optionClass;
+		/* Now we want to break that switch 
+		apart to get the number */ 
 		var switchOptions = document.querySelectorAll('[id*="' + switchClass + '"]'); 
 		
 		if(typeof switchOptions == 'object') 
 		{ 
-			// Run a for loop so we can get all
-			// of the switches on the page
+			/* We need to loop through our object to
+			get all of the panel numbers */
 			for(var i = 0; i < switchOptions.length; i++) 
 			{ 
-				// define 'option'
 				var option = switchOptions[i]; 
-				// run the filterText function to get the number only
 				var optionNumber = self.filterText(option.id, switchClass); 
 				
-				// now create the ClickHandler
 				option.onclick = self.createClickHandler(optionNumber);
 			}
 		
 		} 
 	} 
 	
-	// Create the ClickHandler function
 	this.createClickHandler = function(number)
 	{ 
 		return function() 
@@ -182,45 +186,37 @@ var panelDisplay = function()
 		}; 
 	}; 
 	
-	// This function scrubs all of the switch or
-	// panel's id except for it's number, so that
-	// they can be matched
 	this.filterText = function(text, className) 
 	{ 
-		// Delete anything that isn't the
-		// number at the end of the id
+		/* Delte the id and keep only
+		the number */
 		text = text.replace(className, ''); 
 		
 		return text; 
 	}; 
 	
-	// This function turns the panels off and on
 	this.displayPanel = function(switchOptionNumber) 
 	{ 
-		// Define the panel id with the
-		// same process as before
-		var panelClass = 'panel'; 
+		var panelClass = self.panelClass; 
 		var panelOptions = document.querySelectorAll('[id*="' + panelClass + '"]'); 
 		
 		if(typeof panelOptions == 'object') 
 		{ 
-			// Once again, loop through the page to isolate
-			// the panels
 			for(var i = 0; i < panelOptions.length; i++) 
 			{ 
 				var option = panelOptions[i]; 
 				var optionNumber = self.filterText(option.id, panelClass);
 				
-				// Now, if the switch number equals the
-				// panel number:
+				/* We need to match up the switch number
+				and the panel number */
 				if(switchOptionNumber == optionNumber) 
 				{ 
-					// turn it on!
+					/* Turn on the panel! */
 					option.style.display = 'block'; 
 				} 
 				else 
 				{ 
-					// turn it off
+					/* Keep the other panels off */
 					option.style.display = 'none'; 
 				}
 			}
@@ -229,8 +225,11 @@ var panelDisplay = function()
 	
 	}; 
 
-}; 
-
-var panels = new panelDisplay(); 
-// setup the panels on window load
+};
+ 
+// Deinfe switch and panel classes here
+var panels = new panelDisplay('trigger', 'panel'); 
+var instruments = new panelDisplay('radio', 'instrument'); 
+/* we want to setup the panels on window load */ 
 panels.addEvents(); 
+instruments.addEvents();
