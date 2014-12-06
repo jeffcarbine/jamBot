@@ -6,6 +6,8 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
@@ -23,18 +25,12 @@
 
 <div id="panel1" class="panel">
 	<h2>Metronome</h2>
-   
-    <div id="row">
-    	<div class="metronomeTitle" id="cajon">Cajon</div>
-        <div class="metronomeTitle" id="drums">Drums</div>
-        <div class="metronomeTitle" id="beep">Beep</div>
-    </div>
-    
-    <div id="row">
-    	<input class="radioButtons" type="radio" name="metronomeSound" value="cajon" id="cajon" checked="checked">
-        <input class="radioButtons" type="radio" name="metronomeSound" value="drums" id="drums">
-        <input class="radioButtons" type="radio" name="metronomeSound" value="beep" id="beep">
-    </div>
+     
+    <h3>Metronome Sound</h3>  
+    <select id="selectInstrument">
+    	<option>Drums</option>
+        <option>Cajon</option>
+    </select>
     
     <div id="row">
     <div class="title">Beats Per<br>Minute</div>
@@ -49,16 +45,28 @@
     </div>
     
     <div id="metronomeSounds">
-    	<audio id="cajonAccent-1">
-        	<source src="audio/metronome/cajonAccent-1.wav" type="audio/wav">
-            <source src="audio/metronome/cajonAccent-1.ogg" type="audio/ogg">
+    	<audio id="cajonAccent">
+        	<source src="audio/metronome/cajonAccent.wav" type="audio/wav">
+            <source src="audio/metronome/cajonAccent.ogg" type="audio/ogg">
             Your browser does not support audio.
         </audio>
-        <audio id="cajonNon-1">
-        	<source src="audio/metronome/cajonNon-1.wav" type="audio/wav">
-            <source src="audio/metronome/cajonNon-1.ogg" type="audio/ogg">
+        <audio id="cajonNon">
+        	<source src="audio/metronome/cajonNon.wav" type="audio/wav">
+            <source src="audio/metronome/cajonNon.ogg" type="audio/ogg">
         </audio>
     </div>
+    
+    <div id="metronomeSounds">
+    	<audio id="drumAccent">
+        	<source src="audio/metronome/drumAccent.wav" type="audio/wav">
+            <source src="audio/metronome/drumAccent.ogg" type="audio/ogg">
+            Your browser does not support audio.
+        </audio>
+        <audio id="drumNon">
+        	<source src="audio/metronome/drumNon.wav" type="audio/wav">
+            <source src="audio/metronome/drumNon.ogg" type="audio/ogg">
+        </audio>
+    </div>    
     
     <div class="onoffswitch">
         <input type="checkbox" onclick="startJam();" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">

@@ -44,7 +44,7 @@ button {
 }
 
 .radioButtons {
-	margin: 0 13.3%;
+	margin: 0 13.1%;
 }
 
 .title {
@@ -137,6 +137,7 @@ div#theCount {
 }
 
 #trigger2 {
+	display: none;
 	background: #012a44;	
 }
 
@@ -169,6 +170,12 @@ h2 {
 	text-align: center;
 }
 
+h3 {
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+}
+
 .headstock {
 	width: 100%;	
 	display: none;
@@ -180,4 +187,11 @@ h2 {
 
 #headstockArea {
 	margin-top: 50px;
+}
+
+select#selectInstrument {
+	width: 30%;
+	font-size: 42px;
+	margin: 0 auto;
+	display: block;
 }

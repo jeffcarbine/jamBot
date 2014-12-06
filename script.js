@@ -60,15 +60,31 @@ function validate() {
 	}
 }
 
+function playAccent() {
+	if(document.getElementById('selectInstrument').value == 'Drums') {
+		document.getElementById('drumAccent').play();	
+	} else {
+		document.getElementById('cajonAccent').play();
+	}
+}
+
+function playNon() {
+	if(document.getElementById('selectInstrument').value == 'Drums') {
+		document.getElementById('drumNon').play();	
+	} else {
+		document.getElementById('cajonNon').play();
+	}
+}
+
 // This tells the metronome what
 // to do on each marked or non-marked beat
 function checkBeat() {
 	var emphasis = document.getElementById('emphasis').value;
 	
 	if (i == (emphasis - 1)) {
-		document.getElementById('cajonAccent-1').play();
+		playAccent();
 	} else {
-		document.getElementById('cajonNon-1').play();
+		playNon();
 	}
 }	
 
