@@ -61,19 +61,19 @@ function validate() {
 }
 
 function playAccent() {
-	if(document.getElementById('selectInstrument').value == 'Drums') {
-		document.getElementById('drumAccent').play();	
-	} else {
-		document.getElementById('cajonAccent').play();
-	}
+	
+	var accentSound = document.getElementById('selectInstrument').value;
+	
+	document.getElementById(accentSound + 'Accent').play();	
+
 }
 
 function playNon() {
-	if(document.getElementById('selectInstrument').value == 'Drums') {
-		document.getElementById('drumNon').play();	
-	} else {
-		document.getElementById('cajonNon').play();
-	}
+	
+	var nonSound = document.getElementById('selectInstrument').value;
+	
+	document.getElementById(nonSound + 'Non').play();
+	
 }
 
 // This tells the metronome what
