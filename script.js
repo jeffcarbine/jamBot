@@ -1,15 +1,23 @@
+///////////////////
+// METRONOME SCRIPT
+
 // Creating the global variables needed
-// for the metronome
+// for the metronome and giving them
+// default values that will be adjusted
+// by the user
 var bpm = 120;
 var bpb = 4;
 var emphasis = 1;
 i = 0;
 
-// This function starts the metronome
+// Initializes the loop that
+// runs the metronome
 function initLoop()
 {
+	// Validating the bmp, bpb and emphasis
 	validate();
 	
+	// Stop the script if validation fails
 	if(validate == false) {
 		return false	
 	} else {
@@ -18,17 +26,9 @@ function initLoop()
 		if(bpm > 0) clearInterval(bpm);	
 		if(bpb > 0) clearInterval(bpb);
 		
-		// Get the metronome number from the drop-down
-		// menu selection
-		var bpmString = document.getElementById('bpm').value;
-		var bpbString = document.getElementById('bpb').value;
-		
-		// Change the metronome string to number
-		var bpm = parseInt(bpmString);
-		var bpb = parseInt(bpbString);
-		
-		// Check the bpm, bpb and emphasis
-		// to make sure they are all valid
+		// Get bpm, bpb and emphasis
+		var bpm = parseInt(document.getElementById('bpm').value);
+		var bpb = parseInt(document.getElementById('bpb').value);
 		var emphasis = document.getElementById('emphasis').value;
 	
 		// Start the metronome - uses 
@@ -39,19 +39,16 @@ function initLoop()
 	
 }
 
+// Validates whether the bpb, bpm and emphasis
+// are all valid before running the metronome
 function validate() {
 	
-	// Get the metronome number from the drop-down
-	// menu selection
-	var bpmString = document.getElementById('bpm').value;
-	var bpbString = document.getElementById('bpb').value;
-	
-	// Change the metronome string to number
-	var bpm = parseInt(bpmString);
-	var bpb = parseInt(bpbString);
-	
+	// Get bpm, bpb and emphasis
+	var bpm = parseInt(document.getElementById('bpm').value);
+	var bpb = parseInt(document.getElementById('bpb').value);
 	var emphasis = document.getElementById('emphasis').value;
 	
+	// Alert user if their inputs are invalid
 	if(emphasis > bpb) {
 		alert('Emphasized beat must be within beats per measure');
 		var validate = false;
@@ -60,6 +57,7 @@ function validate() {
 	}
 }
 
+// Plays the sound for the accented beat
 function playAccent() {
 	
 	var accentSound = document.getElementById('selectInstrument').value;
@@ -68,6 +66,7 @@ function playAccent() {
 
 }
 
+// Plays the sound for the non-accented beat
 function playNon() {
 	
 	var nonSound = document.getElementById('selectInstrument').value;
@@ -79,8 +78,13 @@ function playNon() {
 // This tells the metronome what
 // to do on each marked or non-marked beat
 function checkBeat() {
+	
+	// First, get the emphasis
 	var emphasis = document.getElementById('emphasis').value;
 	
+	// Then, if the beat matches the emphasis
+	// play the emphasis sound. If not, play the
+	// non-emphasis sound
 	if (i == (emphasis - 1)) {
 		playAccent();
 	} else {
@@ -95,16 +99,9 @@ function startLoop() {
 	// remember!! it starts with zero, so it is always
 	// one less than the beats per measure
 	
-	// Get the metronome number from the drop-down
-	// menu selection
-	var bpmString = document.getElementById('bpm').value;
-	var bpbString = document.getElementById('bpb').value;
-	
-	// Change the metronome string to number
-	var bpm = parseInt(bpmString);
-	var bpb = parseInt(bpbString);
-	
-	console.log(bpb);
+	// Get bpm, bpb and emphasis
+	var bpm = parseInt(document.getElementById('bpm').value);
+	var bpb = parseInt(document.getElementById('bpb').value);
 
 	if(i <= (bpb - 1)) {
 		document.getElementById('theCount').innerHTML = (i+1);
@@ -119,7 +116,8 @@ function startLoop() {
 
 }
 
-// This starts the metronome loop
+// This stops the metronome loop
+// and resets the metronome to zero
 function stopLoop() {
 	clearInterval(metronome);
 	i = 0;	
@@ -128,6 +126,8 @@ function stopLoop() {
 
 // Swtich for turning the metronome on or off
 function startJam() {
+	// Check if the on/off switch is switched on
+	// or if it switched off
 	if (document.getElementById('myonoffswitch').checked == true) {
 		initLoop();	
 	} else {
@@ -135,14 +135,26 @@ function startJam() {
 	}
 }
 
+
+// END METRONOME SCRIPT
+///////////////////////
+
+//////////////////////
+// GUITAR TUNER SCRIPT
+
 function tuneHeadstock() {
 	if (document.getElementById('instrumentHeadstock').checked == 'guitar') {
 		document.getElemenetById('guitarHeadstock').style.display == 'block';	
 	}
 }
 
+// END GUITAR TUNER SCRIPT
+//////////////////////////
 
-// PANEL/SWITCH CODE
+//////////////////////
+// PANEL/SWITCH SWITCH
+
+
 
 var panelDisplay = function(optionClassName, panelClassName) 
 { 
@@ -249,3 +261,6 @@ var instruments = new panelDisplay('radio', 'instrument');
 /* we want to setup the panels on window load */ 
 panels.addEvents(); 
 instruments.addEvents();
+
+// END PANEL/SWITCH CODE
+////////////////////////
